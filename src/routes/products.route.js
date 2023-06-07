@@ -3,7 +3,7 @@ const productRoute=express.Router()
 const { ProductModel}=require("../Models/Produnctus.model")
 productRoute.get('/',async(req,res)=>{
     try{
-        const { page = 1, limit = 10 } = req.query;
+        const { page = 1, limit = 12 } = req.query;
         const data=await ProductModel.find().limit(limit * 1).skip((page - 1) * limit);
         res.send(data)
     }
